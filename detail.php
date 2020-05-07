@@ -113,6 +113,7 @@
                                     </div>
 
                                 </div>
+                                <form action="/create_preference.php" method="get">
                                     <div class="as-producttile-info" style="float:left;min-height: 168px;">
                                         <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
                                             <div class="as-producttile-title">
@@ -132,6 +133,7 @@
                                         </div>
                                         <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
                                     </div>
+                                </form>
                             </div>
                         </div>
                     </div>
