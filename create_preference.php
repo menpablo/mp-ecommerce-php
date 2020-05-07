@@ -1,4 +1,8 @@
 <?php
+
+use MercadoPago\Item;
+use MercadoPago\Preference;
+
 require 'vendor/autoload.php';
 
 
