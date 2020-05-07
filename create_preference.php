@@ -1,4 +1,5 @@
 <?php
+namespace flowint;
 
 use MercadoPago\Item;
 use MercadoPago\Preference;
