@@ -12,13 +12,13 @@ SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a
 $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 $back_urls = array(
-    "success" => $page_url."/myContracts?paymentState=succeed",
-    "failure" => $page_url."/myContracts?paymentState=failed",
-    "pending" => $page_url."/myContracts?paymentState=pending",
+    "success" => $page_url."/paymentSucceed.php",
+    "failure" => $page_url."/paymentFailed.php",
+    "pending" => $page_url."/paymentPending.php",
 );
 
 $preference = createPreference("Test",500,"$$$",$back_urls);
-header("Location:".$preference->init_point); ?>
+header("Location:".$preference->init_point);
 
 
 function createPreference($descripcion,$price,$reference, $back_urls = []){
