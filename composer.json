@@ -2,7 +2,7 @@
     "name": "flowint/mp-ecommerce-php",
     "type": "project",
     "require": {
-        "php": "^7.2",
+        "php": "^7.3.0",
         "mercadopago/dx-php": "^2.0"
     }
 }
