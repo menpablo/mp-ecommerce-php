@@ -18,7 +18,8 @@ $back_urls = array(
 );
 
 $preference = createPreference("Test",500,"$$$",$back_urls);
-return ['url' => $preference->init_point ];
+header("Location:".$preference->init_point); ?>
+
 
 function createPreference($descripcion,$price,$reference, $back_urls = []){
     $preference = new Preference();
