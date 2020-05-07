@@ -2,6 +2,6 @@
     "name": "flowint/mp-ecommerce-php",
     "type": "project",
     "require": {
-        "php": "^7.3"
+        "php": "^7.2"
     }
 }
