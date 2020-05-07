@@ -113,7 +113,6 @@
                                     </div>
 
                                 </div>
-                                <form action="/create_preference.php" method="get">
                                     <div class="as-producttile-info" style="float:left;min-height: 168px;">
                                         <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
                                             <div class="as-producttile-title">
@@ -131,7 +130,12 @@
                                                 <?php echo  "cantidad: ". $_POST['unit'] ?>
                                             </h3>
                                         </div>
-                                        <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                        <form action="/create_preference.php" method="get">
+                                            <input type="hidden" name="title" value="<?php echo $_POST['title']?>">
+                                            <input type="hidden" name="price" value="<?php echo $_POST['price']?>">
+                                            <input type="hidden" name="unit"  value="<?php echo $_POST['unit']?>">
+                                            <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                        </form>
                                     </div>
                                 </form>
                             </div>
