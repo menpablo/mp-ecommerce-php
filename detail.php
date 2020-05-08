@@ -1,6 +1,6 @@
 <?php
 require 'vendor/autoload.php';
-
+include './create_preference.php';
 use MercadoPago\SDK;
 use Ramsey\Uuid\Uuid;
 
