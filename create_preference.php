@@ -24,7 +24,7 @@ $title = $_POST['title'];
 $price = $_POST['price'];
 $quantity = $_POST['unit'];
 $preference = createPreference($title,$price,Uuid::uuid4()->toString(),$quantity,$back_urls,$webhookUrl);
-error_log(serialize($preference));
+error_log(json_encode($preference));
 header("Location:".$preference->init_point);
 
 
