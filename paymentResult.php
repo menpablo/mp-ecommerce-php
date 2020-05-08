@@ -1,3 +1,15 @@
+<?php
+
+
+$preference_id         =                                      $_POST['preference_id']        ;//: 469485398-d0b637b8-18e3-4f5c-a962-3e117e5efb56-->
+$external_reference    =                                      $_POST['external_reference']   ;//: 640ad711-50fd-467d-be9c-e3e0098c702e-->
+$payment_id            =                                      $_POST['payment_id']           ;//: 6583230649-->
+$payment_status        =                                      $_POST['payment_status']       ;//: approved-->
+$payment_status_detail =                                      $_POST['payment_status_detail'];//: accredited-->
+$merchant_order_id     =                                      $_POST['merchant_order_id']    ;//: 1314717408-->
+
+?>
+
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -77,8 +89,13 @@
 
                                 <button class="as-filter-button" aria-expanded="true" aria-controls="as-search-filters" type="button">
                                     <h2 class=" as-filter-button-text">
-                                          Bravou!
-                                          Tu numero de pago es <?php echo $_GET['collection_id']  ?>
+                                        <?php
+                                        switch ($payment_status)           {
+                                            case 'approved':
+                                                echo "Bravou! Tu numero de pago es  ".$payment_id;
+                                            default;
+                                        }
+                                        ?>
                                     </h2>
                                 </button>
                             </div>
