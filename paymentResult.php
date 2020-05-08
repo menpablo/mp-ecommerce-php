@@ -1,5 +1,9 @@
 <?php
 
+require 'vendor/autoload.php';
+
+use MercadoPago\Payment;
+use MercadoPago\SDK;
 
 $preference_id         =                                      $_POST['preference_id']        ;//: 469485398-d0b637b8-18e3-4f5c-a962-3e117e5efb56-->
 $external_reference    =                                      $_POST['external_reference']   ;//: 640ad711-50fd-467d-be9c-e3e0098c702e-->
@@ -7,7 +11,6 @@ $payment_id            =                                      $_POST['payment_id
 $payment_status        =                                      $_POST['payment_status']       ;//: approved-->
 $payment_status_detail =                                      $_POST['payment_status_detail'];//: accredited-->
 $merchant_order_id     =                                      $_POST['merchant_order_id']    ;//: 1314717408-->
-
 ?>
 
 <!DOCTYPE html>
@@ -92,7 +95,8 @@ $merchant_order_id     =                                      $_POST['merchant_o
                                         <?php
                                         switch ($payment_status)           {
                                             case 'approved':
-                                                echo "Bravou! Se recibio el pago de la orden ".$external_reference." El numero del mismo es ".$payment_id;
+                                                $payment = Payment::find_by_id($payment_id);
+                                                echo "Bravou! Se recibio el monto de ".$payment->transaction_amount." en concepto de pago de la orden ".$external_reference." El numero del mismo es ".$payment_id;
                                                 break;
                                             case 'rejected':
                                                 echo "Lamentablemente el pago ".$payment_id." no pudo ser procesado";
