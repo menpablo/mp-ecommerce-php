@@ -1,3 +1,28 @@
+<?php
+
+use MercadoPago\SDK;
+use Ramsey\Uuid\Uuid;
+
+SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398");
+
+
+$page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+
+$back_urls = array(
+    "success" => $page_url."/paymentSucceed.php",
+    "failure" => $page_url."/paymentFailed.php",
+    "pending" => $page_url."/paymentPending.php",
+);
+
+$webhookUrl =  $page_url."/notification.php";
+
+$title = $_POST['title'];
+$price = $_POST['price'];
+$quantity = $_POST['unit'];
+$img = $_POST['img'];
+$preference = createPreference($title,$price,Uuid::uuid4()->toString(),$quantity,$back_urls,$webhookUrl,$page_url."/assets/".basename($img));
+?>
+
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -130,12 +155,18 @@
                                                 <?php echo  "cantidad: ". $_POST['unit'] ?>
                                             </h3>
                                         </div>
-                                        <form action="/create_preference.php" method="get">
-                                            <input type="hidden" name="img"   value="<?php echo $_POST['img']?>">
-                                            <input type="hidden" name="title" value="<?php echo $_POST['title']?>">
-                                            <input type="hidden" name="price" value="<?php echo $_POST['price']?>">
-                                            <input type="hidden" name="unit"  value="<?php echo $_POST['unit']?>">
-                                            <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+<!--                                        <form action="/create_preference.php" method="get">-->
+<!--                                            <input type="hidden" name="img"   value="--><?php //echo $_POST['img']?><!--">-->
+<!--                                            <input type="hidden" name="title" value="--><?php //echo $_POST['title']?><!--">-->
+<!--                                            <input type="hidden" name="price" value="--><?php //echo $_POST['price']?><!--">-->
+<!--                                            <input type="hidden" name="unit"  value="--><?php //echo $_POST['unit']?><!--">-->
+<!--                                            <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>-->
+<!--                                        </form>-->
+                                        <form action="/procesar-pago" method="POST">
+                                            <script
+                                                    src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+                                                    data-preference-id="<?php echo $preference->id; ?>">
+                                            </script>
                                         </form>
                                     </div>
                                 </form>
