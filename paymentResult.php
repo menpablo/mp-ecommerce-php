@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 
 use MercadoPago\Payment;
 use MercadoPago\SDK;
+SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398");
 
 $preference_id         =                                      $_POST['preference_id']        ;//: 469485398-d0b637b8-18e3-4f5c-a962-3e117e5efb56-->
 $external_reference    =                                      $_POST['external_reference']   ;//: 640ad711-50fd-467d-be9c-e3e0098c702e-->
