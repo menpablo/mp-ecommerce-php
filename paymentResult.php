@@ -97,7 +97,7 @@ $merchant_order_id     =                                      $_POST['merchant_o
                                         switch ($payment_status)           {
                                             case 'approved':
                                                 $payment = Payment::find_by_id($payment_id);
-                                                echo "Bravou! Se recibio el monto de ".$payment->transaction_amount." en concepto de pago de la orden ".$external_reference." El numero del mismo es ".$payment_id;
+                                                echo "Bravou!</br> Se recibio el monto de ".$payment->transaction_amount." en concepto de pago de la orden ".$external_reference.". </br> El numero del mismo es ".$payment_id;
                                                 break;
                                             case 'rejected':
                                                 echo "Lamentablemente el pago ".$payment_id." no pudo ser procesado";
