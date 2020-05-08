@@ -18,14 +18,16 @@ $back_urls = array(
     "pending" => $page_url."/paymentPending.php",
 );
 
+$webhookUrl =  $page_url."/notification.php";
+
 $title = $_POST['title'];
 $price = $_POST['price'];
 $quantity = $_POST['unit'];
-$preference = createPreference($title,$price,Uuid::uuid4()->toString(),$quantity,$back_urls);
+$preference = createPreference($title,$price,Uuid::uuid4()->toString(),$quantity,$back_urls,$webhookUrl);
 header("Location:".$preference->init_point);
 
 
-function createPreference($descripcion,$price,$reference,$quantity, $back_urls = []){
+function createPreference($descripcion,$price,$reference,$quantity, $back_urls = [],$webhookUrl){
     $preference = new Preference();
 
     // Crea un ítem en la preferencia
@@ -41,6 +43,7 @@ function createPreference($descripcion,$price,$reference,$quantity, $back_urls =
 
     $preference->items = array($item);
     $preference->external_reference = $reference;
+    $preference->notification_url =
     $preference->save();
     return $preference;
 }

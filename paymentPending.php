@@ -77,7 +77,7 @@
 
                                 <button class="as-filter-button" aria-expanded="true" aria-controls="as-search-filters" type="button">
                                     <h2 class=" as-filter-button-text">
-                                        Tu pago esta pendiente de aprobación
+                                        Tu pago esta pendiente de aprobación. Tu numero de pago es <?php echo $_GET['collection_id']  ?>
                                     </h2>
                                 </button>
                             </div>
