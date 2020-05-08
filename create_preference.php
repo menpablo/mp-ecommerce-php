@@ -25,7 +25,7 @@ $title = $_POST['title'];
 $price = $_POST['price'];
 $quantity = $_POST['unit'];
 $img = $_POST['img'];
-$preference = createPreference($title,$price,Uuid::uuid4()->toString(),$quantity,$back_urls,$webhookUrl,$page_url."/".$img);
+$preference = createPreference($title,$price,Uuid::uuid4()->toString(),$quantity,$back_urls,$webhookUrl,$page_url."/assets/".basename($img));
 error_log(json_encode($preference));
 header("Location:".$preference->init_point);
 
