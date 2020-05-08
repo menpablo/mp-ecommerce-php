@@ -1,4 +1,5 @@
 <?php
+require 'vendor/autoload.php';
 
 use MercadoPago\SDK;
 use Ramsey\Uuid\Uuid;
