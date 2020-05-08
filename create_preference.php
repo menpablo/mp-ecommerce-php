@@ -43,7 +43,7 @@ function createPreference($descripcion,$price,$reference,$quantity, $back_urls =
 
     $preference->items = array($item);
     $preference->external_reference = $reference;
-    $preference->notification_url =
+    $preference->notification_url = $webhookUrl;
     $preference->save();
     return $preference;
 }
