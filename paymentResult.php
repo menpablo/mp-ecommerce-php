@@ -92,7 +92,14 @@ $merchant_order_id     =                                      $_POST['merchant_o
                                         <?php
                                         switch ($payment_status)           {
                                             case 'approved':
-                                                echo "Bravou! Tu numero de pago es  ".$payment_id;
+                                                echo "Bravou! Se recibio el pago de la orden ".$external_reference." El numero del mismo es ".$payment_id;
+                                                break;
+                                            case 'rejected':
+                                                echo "Lamentablemente el pago ".$payment_id." no pudo ser procesado";
+                                                break;
+                                            case 'in_process':
+                                                echo "El pago ".$payment_id." esta pendiente de pago";
+                                                break;
                                             default;
                                         }
                                         ?>

@@ -21,7 +21,7 @@ $title = $_POST['title'];
 $price = $_POST['price'];
 $quantity = $_POST['unit'];
 $img = $_POST['img'];
-$preference = createPreference($title,$price,Uuid::uuid4()->toString(),$quantity,$back_urls,$webhookUrl,$page_url."/assets/".basename($img));
+$preference = createPreference($title,$price,"ABCD1234",$quantity,$back_urls,$webhookUrl,$page_url."/assets/".basename($img));
 ?>
 
 <!DOCTYPE html>
