@@ -27,14 +27,8 @@ $quantity = $_POST['unit'];
 $img = $_POST['img'];
 $preference = createPreference($title,$price,Uuid::uuid4()->toString(),$quantity,$back_urls,$webhookUrl,$page_url."/assets/".basename($img));
 error_log(json_encode($preference));
-?>
 
-<form action="/procesar-pago" method="POST">
-    <script
-        src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-        data-preference-id="<?php echo $preference->id; ?>">
-    </script>
-</form>
+
 
 function createPreference($descripcion,$price,$reference,$quantity, $back_urls = [],$webhookUrl,$img){
     $preference = new Preference();
@@ -83,3 +77,12 @@ function createPreference($descripcion,$price,$reference,$quantity, $back_urls =
     $preference->save();
     return $preference;
 }
+
+?>
+
+<form action="/procesar-pago" method="POST">
+    <script
+        src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+        data-preference-id="<?php echo $preference->id; ?>">
+    </script>
+</form>
