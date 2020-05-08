@@ -163,11 +163,13 @@ $preference = createPreference($title,$price,Uuid::uuid4()->toString(),$quantity
 <!--                                            <input type="hidden" name="unit"  value="--><?php //echo $_POST['unit']?><!--">-->
 <!--                                            <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>-->
 <!--                                        </form>-->
-                                        <form action="/paymentSucceed.php" method="POST" data-header-color="#2D3277" data-button-label="Pagar la Compra"
+                                        <form action="/paymentSucceed.php" method="POST" data-header-color="#2D3277"
                                         >
                                             <script
                                                     src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                                                    data-preference-id="<?php echo $preference->id; ?>">
+                                                    data-preference-id="<?php echo $preference->id; ?>"
+                                                    data-button-label="Pagar la Compra"
+                                            >
                                             </script>
                                         </form>
                                     </div>
