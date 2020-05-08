@@ -64,6 +64,15 @@ function createPreference($descripcion,$price,$reference,$quantity, $back_urls =
     $item->currency_id = "ARS";
     $item->picture_url = $img;
 
+    $preference->payment_methods = array(
+        "excluded_payment_methods" => array(
+            array("id" => "amex")
+        ),
+        "excluded_payment_types" => array(
+            array("id" => "atm")
+        ),
+        "installments" => 6
+    );
 
     if(!empty($back_urls)){
         $preference->back_urls = $back_urls;
