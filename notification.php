@@ -19,5 +19,5 @@ switch($_GET["topic"]) {
         break;
 }
 
-error_log(json_encode($merchant_order));
+error_log("Webhook received ".json_encode($merchant_order));
 
