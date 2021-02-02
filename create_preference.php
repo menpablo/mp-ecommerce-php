@@ -86,7 +86,7 @@ function createPreference($descripcion,$price,$reference,$quantity, $back_urls =
     $preference->payer = $payer;
     $preference->external_reference = $reference;
     $preference->notification_url = $webhookUrl;
-    error_log(json_encode($preference));
+    error_log("Preference " .json_encode($preference));
     $preference->save();
     return $preference;
 }

@@ -10,9 +10,9 @@ SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a
 $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 
 $back_urls = array(
-    "success" => $page_url."/paymentSucceed.php",
-    "failure" => $page_url."/paymentFailed.php",
-    "pending" => $page_url."/paymentPending.php",
+    "success" => $page_url."/paymentResult.php",
+    "failure" => $page_url."/paymentResult.php",
+    "pending" => $page_url."/paymentResult.php",
 );
 
 $webhookUrl =  $page_url."/notification.php";
