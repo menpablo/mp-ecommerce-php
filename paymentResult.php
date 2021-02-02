@@ -6,12 +6,12 @@ use MercadoPago\Payment;
 use MercadoPago\SDK;
 SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398");
 
-$preference_id         =                                      $_POST['preference_id']        ;//: 469485398-d0b637b8-18e3-4f5c-a962-3e117e5efb56-->
-$external_reference    =                                      $_POST['external_reference']   ;//: 640ad711-50fd-467d-be9c-e3e0098c702e-->
-$payment_id            =                                      $_POST['payment_id']           ;//: 6583230649-->
-$payment_status        =                                      $_POST['status']       ;//: approved-->
-$payment_status_detail =                                      $_POST['payment_status_detail'];//: accredited-->
-$merchant_order_id     =                                      $_POST['merchant_order_id']    ;//: 1314717408-->
+$preference_id         =                                      $_REQUEST['preference_id']        ;//: 469485398-d0b637b8-18e3-4f5c-a962-3e117e5efb56-->
+$external_reference    =                                      $_REQUEST['external_reference']   ;//: 640ad711-50fd-467d-be9c-e3e0098c702e-->
+$payment_id            =                                      $_REQUEST['payment_id']           ;//: 6583230649-->
+$payment_status        =                                      $_REQUEST['status']       ;//: approved-->
+$payment_status_detail =                                      $_REQUEST['payment_status_detail'];//: accredited-->
+$merchant_order_id     =                                      $_REQUEST['merchant_order_id']    ;//: 1314717408-->
 
 ?>
 
@@ -62,7 +62,6 @@ $merchant_order_id     =                                      $_POST['merchant_o
 
 <div class="stack">
     <?php
-        var_dump($_POST);
         echo "payment_status ". $payment_status;
      ?>
     <div class="as-search-wrapper" role="main">
