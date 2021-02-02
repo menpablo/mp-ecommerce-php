@@ -9,7 +9,7 @@ SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a
 $preference_id         =                                      $_POST['preference_id']        ;//: 469485398-d0b637b8-18e3-4f5c-a962-3e117e5efb56-->
 $external_reference    =                                      $_POST['external_reference']   ;//: 640ad711-50fd-467d-be9c-e3e0098c702e-->
 $payment_id            =                                      $_POST['payment_id']           ;//: 6583230649-->
-$payment_status        =                                      $_POST['payment_status']       ;//: approved-->
+$payment_status        =                                      $_POST['status']       ;//: approved-->
 $payment_status_detail =                                      $_POST['payment_status_detail'];//: accredited-->
 $merchant_order_id     =                                      $_POST['merchant_order_id']    ;//: 1314717408-->
 ?>
@@ -96,19 +96,19 @@ $merchant_order_id     =                                      $_POST['merchant_o
                                 <button class="as-filter-button" aria-expanded="true" aria-controls="as-search-filters" type="button">
                                     <h2 class=" as-filter-button-text">
                                         <?php
-                                        switch ($payment_status)           {
-                                            case 'approved':
-                                                $payment = Payment::find_by_id($payment_id);
-                                                echo "Bravou!</br> Se recibio el monto de ".$payment->transaction_amount." en concepto de pago de la orden ".$external_reference.". </br> El numero del mismo es ".$payment_id;
-                                                break;
-                                            case 'rejected':
-                                                echo "Lamentablemente el pago ".$payment_id." no pudo ser procesado";
-                                                break;
-                                            case 'in_process':
-                                                echo "El pago ".$payment_id." esta pendiente de pago";
-                                                break;
-                                            default;
-                                        }
+                                            switch ($payment_status)           {
+                                                case 'approved':
+                                                    $payment = Payment::find_by_id($payment_id);
+                                                    echo "Bravou!</br> Se recibio el monto de ".$payment->transaction_amount." en concepto de pago de la orden ".$external_reference.". </br> El numero del mismo es ".$payment_id;
+                                                    break;
+                                                case 'rejected':
+                                                    echo "Lamentablemente el pago ".$payment_id." no pudo ser procesado";
+                                                    break;
+                                                case 'in_process':
+                                                    echo "El pago ".$payment_id." esta pendiente de pago";
+                                                    break;
+                                                default;
+                                            }
                                         ?>
                                     </h2>
                                 </button>
