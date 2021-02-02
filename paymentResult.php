@@ -61,7 +61,7 @@ $merchant_order_id     =                                      $_POST['merchant_o
 
 <div class="stack">
     <?php
-                                        echo "payment_status ". $payment_status;
+        echo "payment_status ". $payment_status;
      ?>
     <div class="as-search-wrapper" role="main">
         <div class="as-navtuck-wrapper">
