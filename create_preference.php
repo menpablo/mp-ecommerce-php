@@ -17,9 +17,9 @@ $external_reference = 'pablo@flow-int.com';
 
 //no aplican con popup
 $back_urls = array(
-    "success" => $page_url."/paymentSucceed.php",
-    "failure" => $page_url."/paymentFailed.php",
-    "pending" => $page_url."/paymentPending.php",
+    "success" => $page_url."/paymentResult.php",
+    "failure" => $page_url."/paymentResult.php",
+    "pending" => $page_url."/paymentResult.php",
 );
 
 $webhookUrl =  $page_url."/notification.php";
@@ -86,7 +86,7 @@ function createPreference($descripcion,$price,$reference,$quantity, $back_urls =
     $preference->payer = $payer;
     $preference->external_reference = $reference;
     $preference->notification_url = $webhookUrl;
-    error_log("Preference " .json_encode($preference));
+    error_log("Preference " .$preference->auto_return);
     $preference->save();
     return $preference;
 }
