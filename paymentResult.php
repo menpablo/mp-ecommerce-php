@@ -94,6 +94,7 @@ $merchant_order_id     =                                      $_POST['merchant_o
                                 <button class="as-filter-button" aria-expanded="true" aria-controls="as-search-filters" type="button">
                                     <h2 class=" as-filter-button-text">
                                         <?php
+                                        echo "payment_status ". $payment_status;
                                         switch ($payment_status)           {
                                             case 'approved':
                                                 $payment = Payment::find_by_id($payment_id);
