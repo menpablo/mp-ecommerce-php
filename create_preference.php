@@ -13,6 +13,8 @@ SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a
 
 $page_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 
+$external_reference = 'pablo@flow-int.com';
+
 //no aplican con popup
 $back_urls = array(
     "success" => $page_url."/paymentSucceed.php",
@@ -26,7 +28,7 @@ $title = $_POST['title'];
 $price = $_POST['price'];
 $quantity = $_POST['unit'];
 $img = $_POST['img'];
-$preference = createPreference($title,$price,Uuid::uuid4()->toString(),$quantity,$back_urls,$webhookUrl,$page_url."/assets/".basename($img));
+$preference = createPreference($title,$price,$external_reference,$quantity,$back_urls,$webhookUrl,$page_url."/assets/".basename($img));
 error_log(json_encode($preference));
 
 
@@ -79,6 +81,7 @@ function createPreference($descripcion,$price,$reference,$quantity, $back_urls =
         $preference->back_urls = $back_urls;
     }
 
+    $preference->auto_return = 'approved';
     $preference->items = array($item);
     $preference->payer = $payer;
     $preference->external_reference = $reference;
