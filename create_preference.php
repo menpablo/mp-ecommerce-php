@@ -81,7 +81,7 @@ function createPreference($descripcion,$price,$reference,$quantity, $back_urls =
         $preference->back_urls = $back_urls;
     }
 
-    $preference->auto_return = 'approved';
+    $preference->auto_return = "approved";
     $preference->items = array($item);
     $preference->payer = $payer;
     $preference->external_reference = $reference;
