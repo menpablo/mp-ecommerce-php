@@ -16,12 +16,13 @@ $back_urls = array(
 );
 
 $webhookUrl =  $page_url."/notification.php";
+$external_reference = 'pablo@flow-int.com';
 
 $title = $_POST['title'];
 $price = $_POST['price'];
 $quantity = $_POST['unit'];
 $img = $_POST['img'];
-$preference = createPreference($title,$price,"ABCD1234",$quantity,$back_urls,$webhookUrl,$page_url."/assets/".basename($img));
+$preference = createPreference($title,$price,$external_reference,$quantity,$back_urls,$webhookUrl,$page_url."/assets/".basename($img));
 ?>
 
 <!DOCTYPE html>
