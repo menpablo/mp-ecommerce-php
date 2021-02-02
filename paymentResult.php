@@ -60,7 +60,9 @@ $merchant_order_id     =                                      $_POST['merchant_o
 <body class="as-theme-light-heroimage">
 
 <div class="stack">
-
+    <?php
+                                        echo "payment_status ". $payment_status;
+     ?>
     <div class="as-search-wrapper" role="main">
         <div class="as-navtuck-wrapper">
             <div class="as-l-fullwidth  as-navtuck" data-events="event52">
@@ -94,7 +96,6 @@ $merchant_order_id     =                                      $_POST['merchant_o
                                 <button class="as-filter-button" aria-expanded="true" aria-controls="as-search-filters" type="button">
                                     <h2 class=" as-filter-button-text">
                                         <?php
-                                        echo "payment_status ". $payment_status;
                                         switch ($payment_status)           {
                                             case 'approved':
                                                 $payment = Payment::find_by_id($payment_id);
