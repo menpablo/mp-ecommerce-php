@@ -8,6 +8,9 @@ SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a
 
 $merchant_order = null;
 
+error_log(" ======================================================================= ");
+error_log(" ======================================================================= ");
+
 switch($_GET["topic"]) {
     case "payment":
         $payment = MercadoPago\Payment::find_by_id($_GET["id"]);
