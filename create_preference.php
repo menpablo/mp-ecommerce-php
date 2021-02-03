@@ -22,7 +22,7 @@ $back_urls = array(
     "pending" => $page_url."/paymentResult.php",
 );
 
-$webhookUrl =  $page_url."/notification.php";
+$webhookUrl =  $page_url."/notification.php?source_news=webhooks";
 
 $title = $_POST['title'];
 $price = $_POST['price'];
