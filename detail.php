@@ -39,6 +39,9 @@ $preference = createPreference($title,$price,$external_reference,$quantity,$back
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
 
+    <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
+
+
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
 
     <link rel="stylesheet" href="./assets/category.css" media="screen, print">
